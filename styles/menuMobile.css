@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+}
+
+:root {
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+    --verde-claro: rgb(143, 199, 143);
+    --gris-claro: rgb(228, 230, 231);
+}
