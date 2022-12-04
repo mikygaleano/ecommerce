@@ -9,7 +9,9 @@ $menuMobile = d.querySelector('.mobile-menu'),
 $Carrito = d.querySelector('.navbar-shopping-cart'),
 $productosDetalles = d.querySelector('.product-detail'),
 $body = d.querySelector('body'),
-$cardsConteiner = d.querySelector('.cards-conteiner');
+$cardsConteiner = d.querySelector('.cards-conteiner'),
+$productDetalle = d.querySelector('.product-detalle'),
+$closeIconDetalle = d.querySelector('.product-detail-close'); 
 
 /* variables */
 let productList = [];
@@ -51,6 +53,15 @@ function iconButtonCarrito () {
     $Carrito.addEventListener('click', carritoMenu);
 };
 
+function openDetallesDelProducto () {
+    $productDetalle.classList.remove('inactiv');
+};
+
+function iconDetallesClose () {
+    $productDetalle.classList.add('inactiv')
+};
+
+
 function productosHtml (array) {
     for (product of array) {
 
@@ -69,6 +80,8 @@ function productosHtml (array) {
 
         $img.setAttribute('src', product.image);
         $figureImg.setAttribute('src', imgCarrito);
+        $img.addEventListener('click', openDetallesDelProducto);
+        $closeIconDetalle.addEventListener('click', iconDetallesClose);
 
         $producPrecio.innerText = '$' + product.price;
         $producNombre.innerText = product.name;
@@ -83,6 +96,7 @@ function productosHtml (array) {
         $cardsConteiner.appendChild($productCards);
 
     };
+
 };
 
 productList.push({
