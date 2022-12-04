@@ -7,7 +7,8 @@ $arrayBottom = d.querySelector('.array-bottom'),
 $menuBurger = d.querySelector('.menu'),
 $menuMobile = d.querySelector('.mobile-menu'),
 $Carrito = d.querySelector('.navbar-shopping-cart'),
-$productosDetalles = d.querySelector('.product-detail')
+$productosDetalles = d.querySelector('.product-detail'),
+$body = d.querySelector('body')
 
 
 
@@ -34,9 +35,22 @@ function carritoMenu () {
     }
 };
 
-$mailMenu.addEventListener('click', menuEmailOpen);
-$arrayBottom.addEventListener('click', menuEmailOpen);
 
-$menuBurger.addEventListener('click', menuHamBurger);
+function buttonEmail () {
+    $mailMenu.addEventListener('click', menuEmailOpen);
+    $arrayBottom.addEventListener('click', menuEmailOpen);
+};
 
-$Carrito.addEventListener('click', carritoMenu);
+function buttonHamBurguer () {
+    $menuBurger.addEventListener('click', menuHamBurger);
+};
+
+function iconButtonCarrito () {
+    $Carrito.addEventListener('click', carritoMenu);
+};
+
+/* llamados */
+
+buttonEmail();
+buttonHamBurguer();
+iconButtonCarrito();

@@ -16,20 +16,29 @@ body {
 .logo {
     width: 30px;
     height: 30px;
-    margin: auto 0;
+    margin: auto;
+    background-color: white;
 }
 .navbar-right {
-    margin: auto 24px ;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto auto ;
+    background-color: white;
 }
+
 
 .navbar-right img{
     width: 20px;
     height: 20px;
     position: absolute;
+    background-color: white;
    
 }
 .navbar-left {
     display: flex;
+    background-color: white;
+    margin: auto auto;
 }
 .navbar-left ul{
     margin-left: 12px;
@@ -49,6 +58,7 @@ body {
     display: none;
     width: 30px;
     height: 30px;
+    background-color: white;
 }
 
 .navbar-conteiner {
@@ -56,9 +66,11 @@ body {
     justify-content: space-between;
     border-bottom: 1px solid var(--gris-claro);
     padding: 0 24px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
     background-color: white;
-    z-index: 2;
-    
 }
 .navbar-left ul,
 .navbar-right ul {
@@ -72,7 +84,6 @@ body {
 .navbar-email {
     color: var(--gris-claro);
     font-size: var(--sm);
-    margin-right: 12px;
     cursor: pointer;
 }
 .array-bottom {
@@ -80,6 +91,14 @@ body {
 }
 .navbar-shopping-cart {
     cursor: pointer;
+    position: absolute;
+    margin: auto auto auto 180px;
+}
+
+.navbar-shopping-cart img {
+    position: absolute;
+    left: 0;
+    margin: auto;
 }
 
 .navbar-shopping-cart div{
@@ -90,8 +109,8 @@ body {
     font-size: var(--sm);
     font-weight: bold;
     position: absolute;
-    top: 22px;
-    right: 24px;
+    top: -6px;
+    left: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -115,7 +134,7 @@ body {
     margin-top: -100%;
     position: absolute;
     right: 30px; 
-    z-index: -1; 
+    z-index: -10; 
     transition: 0.5s; 
 }
 
@@ -160,10 +179,13 @@ body {
     margin-top: 60px;
     left: -100%;
     transition: 0.5s;
+    background-color: white;
 }
 
 .hamOpen {
     left: 0;
+    height: 100vh;
+    width: 100%;
     transition: all 0.5s;
 }
 .mobile-menu ul {
@@ -204,10 +226,11 @@ body {
     height: 12px;
 }
 .product-detail {
+    background-color: white;
     width: 360px;
     padding: 24px;
     box-sizing: border-box;
-    position: absolute;
+    position: fixed;
     right: -100%;
     transition: 0.5s;
   }
@@ -287,7 +310,62 @@ body {
     height: 50px;
   }
 
-@media (max-width: 640px) {
+/* productos inicio */
+.main-conteiner {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin: 20px 50px;
+}
+
+.cards-conteiner {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 220px);
+    gap: 26px;
+    place-content: center;
+}
+
+.product-card {
+    width: 220px;
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.product-info figure {
+    margin: 0;
+}
+
+.product-info figure img {
+    width: 40px;
+    height: 40px;
+}
+
+.product-info div p:nth-child(1) {
+    font-weight: bold;
+    font-size: var(--md);
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+  .product-info div p:nth-child(2) {
+    font-size: var(--sm);
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--gris-claro);
+}
+
+
+@media (max-width: 912px) {
     .menu {
       display: block;
       margin: auto 5px;
@@ -307,8 +385,30 @@ body {
     .desktop-menu {
         display: none;
     }
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, 140px);
+    }
+    .product-card {
+        width: 140px;
+    }
+    .product-card img {
+        width: 140px;
+        height: 140px;
+    }
+    .main-conteiner {
+          margin-right: 7px;
+    }
+    .logo {
+        margin: auto 30%;
+    }
+    .navbar-shopping-cart {
+        margin: auto;
+    }
+    /*.navbar-shopping-cart {
+        margin: auto 25px auto -50px;
+    }*/
 }
-@media (min-width: 641px) {
+@media (min-width: 913px) {
     .mobile-menu {
         display: none;
     }
