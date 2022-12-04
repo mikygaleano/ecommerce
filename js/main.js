@@ -35,7 +35,8 @@ function carritoMenu () {
     $productosDetalles.classList.toggle('active')
     if ($productosDetalles.classList.contains('active')) {
         $desktopMenuEmail.classList.remove('toggle-top');
-        $menuMobile.classList.remove('hamOpen')
+        $menuMobile.classList.remove('hamOpen');
+        $productDetalle.classList.add('inactiv');
     }
 };
 
@@ -55,10 +56,13 @@ function iconButtonCarrito () {
 
 function openDetallesDelProducto () {
     $productDetalle.classList.remove('inactiv');
+    if (!$productDetalle.classList.contains('inactiv')) {
+        $productosDetalles.classList.remove('active')
+    }
 };
 
 function iconDetallesClose () {
-    $productDetalle.classList.add('inactiv')
+    $productDetalle.classList.add('inactiv') 
 };
 
 
