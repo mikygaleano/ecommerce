@@ -409,6 +409,7 @@ body {
     z-index: 2;
     padding: 12px;
     border-radius: 50%;
+    margin: auto;
 }
 
 .product-detail-close img{
@@ -504,14 +505,7 @@ body {
     .navbar-shopping-cart img{
         margin: auto;
     }
-    .product-detalle {
-        width: 100%;
-        height: 100%;
-        
-    }
-    .product-detail-close {
-        top: 5px;
-    }
+    
     
 }
 @media (min-width: 913px) {
