@@ -87,6 +87,7 @@ body {
     cursor: pointer;
 }
 .array-bottom {
+    margin-left: 10px;
     cursor: pointer;
 }
 .navbar-shopping-cart {
@@ -110,7 +111,7 @@ body {
     font-weight: bold;
     position: absolute;
     top: -6px;
-    left: 15px;
+    left: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -404,9 +405,10 @@ body {
     .navbar-shopping-cart {
         margin: auto;
     }
-    /*.navbar-shopping-cart {
-        margin: auto 25px auto -50px;
-    }*/
+    .navbar-shopping-cart img{
+        margin: auto;
+    }
+    
 }
 @media (min-width: 913px) {
     .mobile-menu {
