@@ -528,4 +528,7 @@ body {
     .product-informacion p {
         padding: 0 20px;
     }
+    .cards-conteiner {
+        margin: 0;
+    }
 }

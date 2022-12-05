@@ -14,7 +14,16 @@ $productDetalle = d.querySelector('.product-detalle'),
 $closeIconDetalle = d.querySelector('.product-detail-close'); 
 
 /* variables */
-let productList = [];
+let productList = [],
+productJuguete = [],
+productMuebles = [],
+productRopa = [];
+
+const $todos = d.querySelector('.todos'),
+$electronica = d.querySelector('.electronica'),
+$juguetes = d.querySelector('.juguetes'),
+$ropa = d.querySelector('.ropa'),
+$muebles = d.querySelector('.muebles');
 
 /* funciones */
 function menuEmailOpen () {
@@ -65,7 +74,7 @@ function productosHtml (array) {
         const $producNombre = d.createElement('p');
         const $procuctFigure = d.createElement('figure');
         const $figureImg = d.createElement('img');
-        const imgCarrito = './img/carrito-de-compras.png';
+        const imgCarrito = './img/carrito-de-compras.jpg';
 
         $productCards.classList.add('product-card');
         $productInfoConteiner.classList.add('product-info');
@@ -91,17 +100,22 @@ function productosHtml (array) {
 
 };
 
-function openClose () {
-    $mailMenu.addEventListener('click', menuEmailOpen);
-    $arrayBottom.addEventListener('click', menuEmailOpen);
+
+$mailMenu.addEventListener('click', menuEmailOpen);
+$arrayBottom.addEventListener('click', menuEmailOpen);
 
 
-    $menuBurger.addEventListener('click', menuHamBurger);
+$menuBurger.addEventListener('click', menuHamBurger);
 
 
-    $Carrito.addEventListener('click', carritoMenu);
+$Carrito.addEventListener('click', carritoMenu);
+
+
+function renderProduct (dom, productos) {
+    dom.addEventListener('click',function () {productosHtml(productos)})
 }
 
+
 productList.push({
     name: 'Tv',
     price: 850,
@@ -164,8 +178,109 @@ productList.push({
 });
 
 
+productJuguete.push({
+    name: 'cubo',
+    price: 780,
+    image: './img/juguete.png'
+})
+productJuguete.push({
+    name: 'cubo',
+    price: 780,
+    image: './img/juguete.png'
+})
+productJuguete.push({
+    name: 'cubo',
+    price: 780,
+    image: './img/juguete.png'
+})
+productJuguete.push({
+    name: 'cubo',
+    price: 780,
+    image: './img/juguete.png'
+})
+productJuguete.push({
+    name: 'cubo',
+    price: 780,
+    image: './img/juguete.png'
+})
+
+
+productMuebles.push({
+    name: 'placard',
+    price: 1000,
+    image: './img/mueble.jpg'
+});
+productMuebles.push({
+    name: 'placard',
+    price: 1000,
+    image: './img/mueble.jpg'
+});
+productMuebles.push({
+    name: 'placard',
+    price: 1000,
+    image: './img/mueble.jpg'
+});
+productMuebles.push({
+    name: 'placard',
+    price: 1000,
+    image: './img/mueble.jpg'
+});
+productMuebles.push({
+    name: 'placard',
+    price: 1000,
+    image: './img/mueble.jpg'
+});
+productMuebles.push({
+    name: 'placard',
+    price: 1000,
+    image: './img/mueble.jpg'
+});
+productMuebles.push({
+    name: 'placard',
+    price: 1000,
+    image: './img/mueble.jpg'
+});
+
+
+productRopa.push({
+    name: 'campera',
+    price: 1500,
+    image: './img/ropa.jpg'
+});
+productRopa.push({
+    name: 'campera',
+    price: 1500,
+    image: './img/ropa.jpg'
+});
+productRopa.push({
+    name: 'campera',
+    price: 1500,
+    image: './img/ropa.jpg'
+});
+productRopa.push({
+    name: 'campera',
+    price: 1500,
+    image: './img/ropa.jpg'
+});
+productRopa.push({
+    name: 'campera',
+    price: 1500,
+    image: './img/ropa.jpg'
+});
+productRopa.push({
+    name: 'campera',
+    price: 1500,
+    image: './img/ropa.jpg'
+});
 
 
 /* llamados */
-openClose();
-productosHtml(productList);
+
+renderProduct($juguetes, productJuguete);
+renderProduct($electronica, productList);
+renderProduct($ropa, productRopa);
+renderProduct($muebles, productMuebles);
+
+
+
+
