@@ -41,18 +41,6 @@ function carritoMenu () {
 };
 
 
-function buttonEmail () {
-    $mailMenu.addEventListener('click', menuEmailOpen);
-    $arrayBottom.addEventListener('click', menuEmailOpen);
-};
-
-function buttonHamBurguer () {
-    $menuBurger.addEventListener('click', menuHamBurger);
-};
-
-function iconButtonCarrito () {
-    $Carrito.addEventListener('click', carritoMenu);
-};
 
 function openDetallesDelProducto () {
     $productDetalle.classList.remove('inactiv');
@@ -102,6 +90,17 @@ function productosHtml (array) {
     };
 
 };
+
+function openClose () {
+    $mailMenu.addEventListener('click', menuEmailOpen);
+    $arrayBottom.addEventListener('click', menuEmailOpen);
+
+
+    $menuBurger.addEventListener('click', menuHamBurger);
+
+
+    $Carrito.addEventListener('click', carritoMenu);
+}
 
 productList.push({
     name: 'Tv',
@@ -168,8 +167,5 @@ productList.push({
 
 
 /* llamados */
-
-buttonEmail();
-buttonHamBurguer();
-iconButtonCarrito();
+openClose();
 productosHtml(productList);

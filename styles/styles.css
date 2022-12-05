@@ -513,3 +513,19 @@ body {
         display: none;
     }
 }
+
+@media (max-width: 640px) {
+    .product-detalle {
+        width: 100%;
+        height: 400px;
+    }
+    .product-informacion {
+        width: 100%;
+        height: 400px;
+        margin: 0;
+        background-color: var(--verde-claro);
+    }
+    .product-informacion p {
+        padding: 0 20px;
+    }
+}
