@@ -12,6 +12,8 @@ $body = d.querySelector('body'),
 $cardsConteiner = d.querySelector('.cards-conteiner'),
 $productDetalle = d.querySelector('.product-detalle'),
 $closeIconDetalle = d.querySelector('.product-detail-close'); 
+$fragmento = d.createDocumentFragment(),
+cargar = window.onload;
 
 /* variables */
 let productList = [],
@@ -31,13 +33,17 @@ function menuEmailOpen () {
     if ($desktopMenuEmail.classList.contains('toggle-top')) {
         $productosDetalles.classList.remove('active')
     }
+    
 };
 
 function menuHamBurger () {
-    $menuMobile.classList.toggle('hamOpen')
+    $menuMobile.classList.toggle('hamOpen');
     if ($menuMobile.classList.contains('hamOpen')) {
         $productosDetalles.classList.remove('active')
-    }
+    };
+    
+
+    
 };
 
 function carritoMenu () {
@@ -46,7 +52,8 @@ function carritoMenu () {
         $desktopMenuEmail.classList.remove('toggle-top');
         $menuMobile.classList.remove('hamOpen');
         $productDetalle.classList.add('inactiv');
-    }
+    };
+    
 };
 
 
@@ -55,12 +62,16 @@ function openDetallesDelProducto () {
     $productDetalle.classList.remove('inactiv');
     if (!$productDetalle.classList.contains('inactiv')) {
         $productosDetalles.classList.remove('active')
-    }
+    };
+    
+
+    
 };
 
 function iconDetallesClose () {
     $productDetalle.classList.add('inactiv') 
 };
+
 
 
 function productosHtml (array) {
@@ -94,26 +105,18 @@ function productosHtml (array) {
         $productInfoConteiner.appendChild($productInfoDiv);
         $productCards.appendChild($img);
         $productCards.appendChild($productInfoConteiner);
-        $cardsConteiner.appendChild($productCards);
+        $fragmento.appendChild($productCards);
+        
 
     };
-
+    $cardsConteiner.appendChild($fragmento);
 };
 
 
-$mailMenu.addEventListener('click', menuEmailOpen);
-$arrayBottom.addEventListener('click', menuEmailOpen);
+/*function renderProduct (dom, lista) {
+    dom.addEventListener('click',function () {productosHtml(lista)})
+}*/
 
-
-$menuBurger.addEventListener('click', menuHamBurger);
-
-
-$Carrito.addEventListener('click', carritoMenu);
-
-
-function renderProduct (dom, productos) {
-    dom.addEventListener('click',function () {productosHtml(productos)})
-}
 
 
 productList.push({
@@ -276,11 +279,19 @@ productRopa.push({
 
 /* llamados */
 
-renderProduct($juguetes, productJuguete);
-renderProduct($electronica, productList);
-renderProduct($ropa, productRopa);
-renderProduct($muebles, productMuebles);
+document.addEventListener('DOMContentLoaded', ()=> {
+    $desktopMenuEmail.classList.remove('toggle-top');
+    $menuMobile.classList.remove('hamOpen');
+    $productosDetalles.classList.remove('active')
+    $productDetalle.classList.add('inactiv');
+})
+productosHtml(productJuguete);
+$mailMenu.addEventListener('click', menuEmailOpen);
+$arrayBottom.addEventListener('click', menuEmailOpen);
+$menuBurger.addEventListener('click', menuHamBurger);
+$Carrito.addEventListener('click', carritoMenu);
 
+// renderProduct($electronica, productList);
 
 
 
