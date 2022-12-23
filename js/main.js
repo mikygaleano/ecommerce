@@ -113,9 +113,12 @@ function productosHtml (array) {
 };
 
 
-/*function renderProduct (dom, lista) {
-    dom.addEventListener('click',function () {productosHtml(lista)})
-}*/
+function renderProduct (dom, lista) {
+    dom.addEventListener('click',function (event) {
+        event.preventDefault();
+        productosHtml(lista);
+    });
+}
 
 
 
@@ -276,6 +279,9 @@ productRopa.push({
     image: './img/ropa.jpg'
 });
 
+let productTodos = [];
+
+productTodos.push(productList);
 
 /* llamados */
 
@@ -286,12 +292,19 @@ document.addEventListener('DOMContentLoaded', ()=> {
     $productDetalle.classList.add('inactiv');
 })
 productosHtml(productJuguete);
+productosHtml(productMuebles);
+productosHtml(productRopa);
+productosHtml(productList);
+
 $mailMenu.addEventListener('click', menuEmailOpen);
 $arrayBottom.addEventListener('click', menuEmailOpen);
 $menuBurger.addEventListener('click', menuHamBurger);
 $Carrito.addEventListener('click', carritoMenu);
 
-// renderProduct($electronica, productList);
+renderProduct($electronica, productList);
+renderProduct($ropa, productRopa);
+renderProduct($muebles, productMuebles);
+renderProduct($juguetes, productJuguete);
 
 
 
